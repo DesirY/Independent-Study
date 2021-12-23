@@ -1,0 +1,45 @@
+/*
+This script is used to visualize the BEB table information 
+that is embeded in the networkView
+*/
+#BEBTableDiv{
+    display: grid;
+    grid-template-columns: 15% 18% 21% 21% 21%;
+    grid-column-gap: 1%;
+    grid-row-gap: 4px;
+    grid-template-rows: 20px;
+    width: 688px;
+    padding: 0px;
+    border: 0px solid black;
+    margin: auto;
+    position: absolute;
+    overflow: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+.BEBTableItem{
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0px solid #666666;
+    padding: 0px;
+    font-size: 10px;
+    color: black;
+    /* line-height: 100px; */
+    font-family: Helvetica;
+}
+
+.BEBTableTitleItem{
+    background-color: rgba(102, 102, 102, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0px solid #666666;
+    padding: 0px;
+    font-size: 12px;
+    color: white;
+    font-family: Helvetica;
+}

@@ -1,0 +1,27 @@
+#illustrateDiv{
+    display: grid;
+    grid-template-columns: 10% repeat(6, 12.5%) 15%;
+    /* grid-template-rows: 25px; */
+    width: 790px;
+    height: 40px;
+    padding: 0px;
+    border: 1px dashed black;
+    margin: auto auto 0 0;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 5px;
+}
+.illusItem{
+    background-color:white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 0px solid #666666;
+    padding: 0px;
+    font-size: 15px;
+    color: black;
+    /* line-height: 1; */
+    font-family: Helvetica;
+}

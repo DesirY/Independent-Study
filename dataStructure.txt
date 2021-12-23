@@ -1,0 +1,9 @@
+ {
+        LineName: {
+            'coordinates': coordinates, 
+            'timePeriods': [{'period': [line[6], line[8]], 'block_num': BEB_id, 'from_stop': from_stop, 'to_stop': to_stop, 'direction': DirectionName} ...],
+            'length': ,
+            'destinations': {from_stop: [name1, name2, ...], to_stop: [name1, name2, ...]},
+            'served_BEB': [],
+        }
+    }

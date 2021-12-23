@@ -1,0 +1,47 @@
+#BEBtableDiv {
+    width:610px;
+    height:105px;
+    overflow-y: scroll;
+    overflow-x:none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 8px;
+    bottom: 0;
+    padding: 0;
+    margin: 0 auto auto auto;
+    border: 1px solid rgba(203, 3, 0, 0.6);
+}
+
+#BEBRoutetableDiv {
+    width:610px;
+    height:105px;
+    overflow-y: scroll;
+    overflow-x:none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 8px;
+    bottom: 0;
+    padding: 0;
+    margin: 0 auto auto auto;
+    border: 1px solid rgba(203, 3, 0, 0.6);
+}
+
+/*Table style*/
+table {
+    font-family: Helvetica;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    font-size: 10px;
+    padding: 2px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }

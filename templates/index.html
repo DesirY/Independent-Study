@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Battery Electric Bus Deployment</title>
+<link rel="stylesheet" type="text/css" href="static/css/Layout.css">
+<link rel="stylesheet" type="text/css" href="static/css/option.css">
+<link rel="stylesheet" type="text/css" href="static/css/timebar.css">
+<link rel="stylesheet" type="text/css" href="static/css/BEBDiv.css">
+<link rel="stylesheet" type="text/css" href="static/css/charts.css">
+<link rel="stylesheet" type="text/css" href="static/css/illustrate.css">
+<link rel="stylesheet" type="text/css" href="static/css/infoView.css">
+<link rel="stylesheet" type="text/css" href="static/css/BEBtable.css">
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="static/js/d3.js"></script>
+<script src="https://kit.fontawesome.com/89d02c748f.js" crossorigin="anonymous"></script>
+</head> 
+<body style="margin: 0;">
+<div id="interfaceDiv">
+    <div id="titleBarDiv"><svg id='titleSvg'></svg></div>
+    <div id="mapContainerDiv">
+        <div id="mapDiv">
+            <svg id="mapSvg"></svg>
+        </div>
+        <!-- <div id="illustrateDiv">
+            <div class="illusItem" style="justify-content: right"><i class="fas fa-bus fa-2x"></i></div>
+            <div class="illusItem" >Bus</div>
+            <div class="illusItem" style="justify-content: right"><i class="fas fa-route fa-2x"></i></div>
+            <div class="illusItem">Route</div>
+            <div class="illusItem" style="justify-content: right"><i class="fas fa-map-marker-alt fa-2x"></i></div>
+            <div class="illusItem">Stop</div>
+            <div class="illusItem" style="justify-content: right"><i class="fas fa-charging-station fa-2x"></i></div>
+            <div class="illusItem">Charging</div>
+        </div> -->
+        <div id="optionDiv">
+            <div class="optionItem" id="selectItem">
+                <form onsubmit="getInfor()">
+                    <select name="cars" id="selectForm">
+                    <option value="1" selected>Option 1</option>
+                    <option value="2">option2</option>
+                    <option value="3">option3</option>
+                    </select>
+                </form>
+            </div>
+            <div class="optionItem">Budget:<span id="budgetValue" style="color: #666666;">$25 million</span></div>
+            <div class="optionItem">BEBs:<span id="BEBValue" style="color: #666666;">26</span></div>
+            <div class="optionItem">Enviroment Cost:<span id="envValue" style="color: #666666;">2.27e+06</span></div>
+        </div>
+    </div>
+
+    <!-- <div id="timeDiv">
+        <input id="timeBarInput" type="range" value="0">
+    </div>
+    <div id="LineDiv">
+    </div>
+    <div id="BEBContainerDiv">
+        <div id="BEBDiv">
+            <div id="BEBtableDiv">
+                <table >
+                    <thead>
+                   <tr>
+                     <th>Block_num</th>
+                     <th>LineAbbr</th>
+                     <th>Pollutant (ug/m3)</th>
+                    </tr></thead>
+                    <tr class='itemContent'>
+                       <td></td>
+                       <td></td>
+                       <td></td>
+                     </tr>
+                   </table>
+            </div>
+            <div class="chartDiv" id = 'BEBChart'>
+            </div>
+        </div>
+    </div>
+    <div id="BEBRouteContainerDiv">
+        <div id="BEBRouteDiv">
+          <div id="BEBRoutetableDiv">
+            <table >
+              <thead>
+             <tr>
+               <th>LineAbbr</th>
+               <th>LineName</th>
+               <th>Service</th>
+               <th>Frequency</th>
+              </tr></thead>
+              <tr class = 'itemContent'>
+                 <td>添加滚动条</td>
+                 <td>添加滚动条</td>
+                 <td>添加滚动条</td>
+                 <td>添加滚动条</td>
+               </tr>
+             </table>
+          </div>
+          <div class="chartDiv" id = 'BEBRouteChart'></div>
+        </div>
+    </div>
+    
+    <div id="ChargingContainerDiv">
+        <div id="ChargingDiv">
+          <div class="chartDiv" id="ChargingChart" style="top: 0;"></div>
+        </div>
+    </div> -->
+    <div id="infoView">
+        <div id="timeView"></div>
+        <div id="networkView">
+            <div id="BEBTableDiv">
+                <div class="BEBTableTitleItem">BEB</div>
+                <div class="BEBTableTitleItem">Status</div>
+                <div class="BEBTableTitleItem">Energy</div>
+                <div class="BEBTableTitleItem">Mileage</div>
+                <div class="BEBTableTitleItem">Served routes</div>
+            </div>
+        </div>
+        <div id="detailView">
+            <div id="infoPart">
+                <div class="infoLeftItem" id="left1"></div><div class="infoRightItem" id="right1"></div>
+                <div class="infoLeftItem" id="left2" style="background-color: rgba(102, 102, 102, 0.07);"></div><div class="infoRightItem" id="right2" style="background-color: rgba(102, 102, 102, 0.07);"></div>
+                <div class="infoLeftItem" id="left3" ></div><div class="infoRightItem" id="right3" ></div>
+                <div class="infoLeftItem" id="left4" style="background-color: rgba(102, 102, 102, 0.07);"></div><div class="infoRightItem" id="right4" style="background-color: rgba(102, 102, 102, 0.07);"></div>
+                <div class="infoLeftItem" id="left5"></div><div class="infoRightItem" id="right5"></div>
+            </div>
+            <div id="chartPart"></div>
+        </div>
+    </div>
+</div>
+</body>
+<script src="static/js/route.js"></script>
+<script src="static/js/BEBTable.js"></script>
+<script src="static/js/layoutStyle.js"></script>
+<script src="static/js/map.js"></script>
+<script src="static/js/mapRoutes.js"></script>
+<script src="static/js/mapCharges.js"></script>
+<script src="static/js/mapBEBs.js"></script>
+<script src="static/js/charts.js"></script>
+<script src="static/js/option.js"></script>
+<script src="static/js/timebar.js"></script>
+<script src="static/js/zoom.js"></script>
+<script src="static/js/network.js"></script>
+<script src="static/js/detail.js"></script>
+<script async
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD5oB8L2DpZ8jINjciUvVoaD21QwX_vuis&callback=initMap"
+></script>
+</html>

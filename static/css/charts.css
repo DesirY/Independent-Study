@@ -1,0 +1,24 @@
+.chartDiv{
+    width:620px;
+    height:160px;
+    position: absolute;
+    left: 0px;
+    right: 0;
+    top: 125px;
+    bottom: 0;
+    padding: 0;
+    margin: 0 auto auto auto;
+    border: 0px solid rgba(203, 3, 0, 0.6);
+}
+
+.chartSvg{
+    width:620px;
+    height:160px;
+    position: absolute;
+    left: 0px;
+    right: 0;
+    top: 0px;
+    bottom: 0;
+    padding: 0;
+    margin: auto;
+}

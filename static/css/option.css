@@ -1,0 +1,50 @@
+#optionDiv {
+    display: grid;
+    grid-template-columns: repeat(4, 25%);
+    grid-template-rows: 40px;
+    /* width: 640px;
+    height: 25px;
+    padding: 0px;
+    border: 0px solid black;
+    margin: 0 0 auto auto;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 35px;
+    bottom: 0; */
+    width: 740px;
+    height: 40px;
+    padding: 0px;
+    border: 1px dashed black;
+    margin: auto auto 0 0;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 5px;
+}
+.optionItem{
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 0px solid black;
+    padding: 0px;
+    font-size: 12px;
+    color: black;
+    /* line-height: 1; */
+    font-family: Helvetica;
+}
+
+#selectItem{
+    justify-content: left;
+}
+
+#selectForm {
+    width: 100px;
+    height: 20px;
+    border: 1px solid #CB0300;
+    border-radius: 5px;
+    font-family: Helvetica;
+    color: #CB0300;
+}
